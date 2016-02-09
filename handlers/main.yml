@@ -20,3 +20,10 @@
   service:
     name: 'saslauthd'
     state: 'restarted'
+
+# handlers file for rspamd
+- name: Restart rmilter
+  service:
+    name: 'rmilter'
+    state: 'restarted'
+

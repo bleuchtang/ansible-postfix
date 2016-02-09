@@ -1,0 +1,12 @@
+{% if 'rspamd' in postfix %}
+
+# rspamd
+{% if postfix_rmilter_bind == 'unix' %}
+smtpd_milters = unix:/run/rmilter/rmilter.sock 
+{% else %}
+smtpd_milters = inet:localhost:11000
+{% endif %}
+milter_protocol = 6
+milter_mail_macros = i {mail_addr} {client_addr} {client_name} {auth_authen}
+milter_default_action = accept
+{% endif %}

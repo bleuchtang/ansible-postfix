@@ -30,6 +30,10 @@
 - include: configure.yml
   when: postfix
 
+- include: rspamd.yml
+  when: ((postfix is defined and postfix) and
+         ('rspamd' in postfix ))
+
 - include: auth_sasl.yml
   when: ((postfix is defined and postfix) and
          ('auth' in postfix and ( postfix_smtpd_sasl_type == 'cyrus' 

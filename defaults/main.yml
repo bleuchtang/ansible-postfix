@@ -513,6 +513,19 @@ postfix_dependent_mastercf: []
 # extension when ``test`` Postfix capability is enabled.
 postfix_smtpd_authorized_xclient_hosts: [ '127.0.0.1/32' ]
 
+# -------------------------------
+#   Rspamd/Rmilter options
+# -------------------------------
+
+# .. envvar:: rspamd_packages 
+#
+# List of packages to be installed with rspamd
+rspamd_packages: [ 'rspamd', 'rmilter', 'memcached' ]
+
+# .. envvar:: postfix_rmilter_com 
+#
+# How rmilter shoult listen 
+postfix_rmilter_bind: 'inet'
 
 # ----------------------------------
 #   External service configuration
